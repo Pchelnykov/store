@@ -1,0 +1,64 @@
+.services__item {
+  padding: 20px;
+  background: var(--card-bg-01);
+  display: flex;
+  align-items: center;
+  column-gap: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 10wpx;
+}
+
+.services__item span i {
+  font-size: 2.2rem;
+  background: var(--primary-color);
+  border-radius: 50px;
+  padding: 10px;
+  color: #fff;
+  font-weight: 400 !important;
+}
+
+.services__item h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.services__item p {
+  color: #222;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .services__item h3 {
+    font-size: 1rem;
+  }
+
+  .services__item {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .services__item span i {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services__item {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .services__item span i {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .services__item {
+    padding: 20px;
+  }
+}

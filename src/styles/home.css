@@ -1,0 +1,65 @@
+.hero__section {
+  background-color: var(--hero-bg);
+}
+
+.hero__content h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.hero__content p {
+  color: #111;
+  line-height: 28px;
+}
+
+.hero__content {
+  padding-top: 45px;
+}
+
+.hero__content p:nth-child(1) {
+  font-weight: 500;
+}
+
+.buy__btn {
+  border: none;
+  outline: 0;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.buy__btn a:hover {
+  color: yellowgreen;
+}
+
+.section__title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.timer__count {
+  background-color: var(--primary-color);
+  height: 300px;
+}
+
+.timer__count img {
+  height: 70%;
+  width: 70%;
+  object-fit: contain;
+}
+
+.store__btn {
+  color: var(--primary-color);
+  background: #fff;
+  font-weight: 600;
+}
+
+.store__btn a:hover {
+  color: gray;
+}
