@@ -9,3 +9,8 @@
   color: var(--primary-color);
   font-weight: 600;
 }
+
+.auth__form input[type="file"] {
+  color: #fff;
+  cursor: pointer;
+}
