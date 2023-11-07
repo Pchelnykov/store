@@ -52,10 +52,36 @@
   color: var(--primary-color);
 }
 
-.nav__icons span img {
+.nav__icons .profile img {
   height: 30px;
   width: 30px;
   cursor: pointer;
+  border-radius: 50%;
+}
+
+.nav__icons .profile {
+  position: relative;
+  z-index: 9;
+}
+
+.nav__icons .profile .profile__actions {
+  position: absolute;
+  top: 98%;
+  left: 0;
+  width: 150px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg-01);
+  padding: 15px;
+  line-height: 30px;
+  display: none;
+  cursor: pointer;
+}
+
+.show__profileActions {
+  display: block;
 }
 
 .cart__icon,

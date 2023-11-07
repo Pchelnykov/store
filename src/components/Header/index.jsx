@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container, Row } from "reactstrap";
 import logo from "../../assets/images/eco-logo.png";
 import userIcon from "../../assets/images/user-icon.png";
@@ -6,6 +6,7 @@ import "./header.css";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import useAuth from "../../custom-hooks/useAuth";
 
 const nav__links = [
   {
@@ -27,6 +28,8 @@ const Header = () => {
   const headerRef = React.useRef(null);
   const menuRef = React.useRef(null);
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
+  const profileActionRef = useRef(null);
   const navigateToCart = () => navigate("/cart");
 
   const stickyHeaderFunction = () => {
@@ -54,15 +57,10 @@ const Header = () => {
     };
   }, []);
 
-  return (
-    <header className="header" ref={headerRef}>
-      <Container>
-        <Row>
-          <div className="nav__wrapper">
-            <div className="logo">
-              <motion.img whileTap={{ scale: 1.3 }} src={logo} alt="logo" />
-              <div>
-                <h1>Multismart</h1>
+  const toggleProfileActions = () =>
+    profileActionRef.current.classList.toggle("show__profileActions");
+
+  return ( { useRef }
               </div>
             </div>
             <div className="navigation" ref={menuRef} onClick={menuToggle}>
@@ -93,13 +91,29 @@ const Header = () => {
                 ></i>
                 <span className="badge">{totalQuantity}</span>
               </span>
-              <span>
+              <div className="profile">
                 <motion.img
                   whileTap={{ scale: 1.2 }}
-                  src={userIcon}
+                  src={currentUser ? currentUser.photoURL : userIcon}
                   alt="user-icon"
+                  onClick={toggleProfileActions}
                 />
-              </span>
+                <div
+                  className="profile__actions"
+                  ref={profileActionRef}
+                  onClick={toggleProfileActions}
+                >
+                  {currentUser ? (
+                    <span>Logout</span>
+                  ) : (
+                    <div>
+                      <Link to="/singup">Singup</Link>
+                      <Link to="/login">Login</Link>
+                    </div>
+                  )}
+                </div>
+                <p>{currentUser.displayName}</p>
+              </div>
               <div className="mobile__menu">
                 <span>
                   <i className="ri-menu-line" onClick={menuToggle}></i>
