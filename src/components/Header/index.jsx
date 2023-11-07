@@ -60,7 +60,78 @@ const Header = () => {
   const toggleProfileActions = () =>
     profileActionRef.current.classList.toggle("show__profileActions");
 
-  return ( { useRef }
+  return (
+    //             </div>
+    //           </div>
+    //           <div className="navigation" ref={menuRef} onClick={menuToggle}>
+    //             <ul className="nav__menu">
+    //               {nav__links.map((items, id) => (
+    //                 <li key={id} className="nav__item">
+    //                   <Link
+    //                     to={items.path}
+    //                     className={(navClass) =>
+    //                       navClass.isActive ? `nav__active` : ``
+    //                     }
+    //                   >
+    //                     {items.dispalay}
+    //                   </Link>
+    //                 </li>
+    //               ))}
+    //             </ul>
+    //           </div>
+    //           <div className="nav__icons">
+    //             <span className="fav__icon">
+    //               <i className="ri-heart-line"></i>
+    //               <span className="badge">1</span>
+    //             </span>
+    //             <span className="cart__icon">
+    //               <i
+    //                 className="ri-shopping-bag-line"
+    //                 onClick={navigateToCart}
+    //               ></i>
+    //               <span className="badge">{totalQuantity}</span>
+    //             </span>
+    //             <div className="profile">
+    //               <motion.img
+    //                 whileTap={{ scale: 1.2 }}
+    //                 src={currentUser ? currentUser.photoURL : userIcon}
+    //                 alt="user-icon"
+    //                 onClick={toggleProfileActions}
+    //               />
+    //               <div
+    //                 className="profile__actions"
+    //                 ref={profileActionRef}
+    //                 onClick={toggleProfileActions}
+    //               >
+    //                 {currentUser ? (
+    //                   <span>Logout</span>
+    //                 ) : (
+    //                   <div>
+    //                     <Link to="/singup">Singup</Link>
+    //                     <Link to="/login">Login</Link>
+    //                   </div>
+    //                 )}
+    //               </div>
+    //               <p>{currentUser.displayName}</p>
+    //             </div>
+    //             <div className="mobile__menu">
+    //               <span>
+    //                 <i className="ri-menu-line" onClick={menuToggle}></i>
+    //               </span>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </Row>
+    //     </Container>
+    //   </header>
+    <header className="header" ref={headerRef}>
+      <Container>
+        <Row>
+          <div className="nav__wrapper">
+            <div className="logo">
+              <motion.img whileTap={{ scale: 1.3 }} src={logo} alt="logo" />
+              <div>
+                <h1>Multismart</h1>
               </div>
             </div>
             <div className="navigation" ref={menuRef} onClick={menuToggle}>
@@ -79,6 +150,7 @@ const Header = () => {
                 ))}
               </ul>
             </div>
+
             <div className="nav__icons">
               <span className="fav__icon">
                 <i className="ri-heart-line"></i>
