@@ -62,26 +62,28 @@
 .nav__icons .profile {
   position: relative;
   z-index: 9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav__icons .profile .profile__actions {
   position: absolute;
-  top: 98%;
+  top: 99%;
   left: 0;
   width: 150px;
   z-index: 10;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   background: var(--card-bg-01);
   padding: 15px;
   line-height: 30px;
-  display: none;
   cursor: pointer;
 }
 
 .show__profileActions {
-  display: block;
+  display: flex !important;
 }
 
 .cart__icon,
